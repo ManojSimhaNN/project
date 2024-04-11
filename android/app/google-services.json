@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "636955805916",
+    "project_id": "project-f8940",
+    "storage_bucket": "project-f8940.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:636955805916:android:6c29a79823499593e48c19",
+        "android_client_info": {
+          "package_name": "com.example.companion_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-BLw5azKvDGRBr36pYsYCOClx8XxNZ-4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
