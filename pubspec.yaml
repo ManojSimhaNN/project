@@ -37,6 +37,10 @@ dependencies:
   firebase_core: ^2.29.0
   firebase_auth: ^4.19.1
   google_fonts:
+  flutter_svg: ^2.0.10+1
+  websafe_svg: ^3.0.1+1
+
+  get: ^4.1.4
 
 dev_dependencies:
   flutter_test:
@@ -59,8 +63,7 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-    - lib/images/apple.png
-    - lib/images/google.png
+    - lib/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

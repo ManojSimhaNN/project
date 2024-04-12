@@ -1,5 +1,10 @@
+// ignore_for_file: unused_import
+
+import 'package:companion_app/pages/welcome_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:companion_app/pages/quiz_page.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
@@ -13,21 +18,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        actions: [
-          IconButton(
-            onPressed: signUserOut,
-            icon: Icon(Icons.logout),
-          )
-        ],
-      ),
-      body: Center(
-        child: Text(
-          'LOGGED IN AS:' + user.email!,
-          style: TextStyle(fontSize: 20),
-        ),
-      ),
-    );
+    return Welcome();
   }
 }

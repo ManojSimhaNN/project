@@ -7,6 +7,7 @@ class LoginOnRegisterPage extends StatefulWidget {
 
   @override
   State<LoginOnRegisterPage> createState() => _LoginOnRegisterPageState();
+  
 }
 
 class _LoginOnRegisterPageState extends State<LoginOnRegisterPage> {

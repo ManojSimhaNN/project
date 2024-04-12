@@ -74,7 +74,16 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
+      appBar: AppBar(
+        title: Center(
+          child: Text("Companion App"),
+        ),
+        backgroundColor: Colors.amber,
+        elevation: 0,
+        leading: Icon(Icons.menu),
+        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.logout))],
+      ),
+      backgroundColor: const Color.fromARGB(255, 5, 50, 80),
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
