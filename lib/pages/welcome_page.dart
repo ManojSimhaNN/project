@@ -22,12 +22,19 @@ class Welcome extends StatelessWidget {
         leading: Icon(Icons.menu),
         actions: [IconButton(onPressed: () {}, icon: Icon(Icons.logout))],
       ),
+      backgroundColor: const Color.fromARGB(255, 5, 50, 80),
       body: Column(
         children: [
           // first box
+
           Expanded(
             child: Container(
-              color: Colors.deepPurple[400],
+              child: Icon(
+                Icons.emoji_emotions,
+                size: 100,
+                color: Colors.white,
+              ),
+              color: Color.fromARGB(255, 5, 50, 80),
             ),
           ),
 
@@ -35,33 +42,66 @@ class Welcome extends StatelessWidget {
 
           Expanded(
             child: Container(
-              color: Colors.deepPurple[300],
+              child: const Center(
+                child: Text(
+                  "Mental Health Assesment",
+                  style: TextStyle(
+                    fontSize: 40,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              padding: EdgeInsets.all(4.0),
+              color: Color.fromARGB(255, 5, 50, 80),
             ),
           ),
+
+          //second box
+          Expanded(
+            child: Container(
+              child: const Center(
+                child: Text(
+                  "Let's quickly take personal health questionnaire before we get atarted!",
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              padding: EdgeInsets.all(4.0),
+              color: Color.fromARGB(255, 5, 50, 80),
+            ),
+          ),
+
           //third box
+
+//"Let's quickly take personal health questionnaire before we get atarted!"
 
           Expanded(
             child: Container(
-              color: Colors.deepPurple[200],
-            ),
-          ),
-
-          TextButton(
-            style: TextButton.styleFrom(
-              textStyle: const TextStyle(
-                fontSize: 20,
-                color: Colors.black,
+              color: Color.fromARGB(255, 5, 50, 80),
+              alignment: Alignment.center,
+              child: ElevatedButton(
+                child: Text("Start Quiz"),
+                style: ElevatedButton.styleFrom(
+                  foregroundColor: Colors.black,
+                  backgroundColor: Colors.amber,
+                  fixedSize: Size(
+                    150,
+                    50,
+                  ),
+                  shape: const StadiumBorder(),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => QuizPage(),
+                    ),
+                  );
+                },
               ),
             ),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => QuizPage(),
-                ),
-              );
-            },
-            child: const Text('Start Quiz'),
           ),
         ],
       ),

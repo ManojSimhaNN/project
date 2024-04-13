@@ -17,40 +17,52 @@ List<Question> getQuestions() {
   //ADD questions and answer here
 
   list.add(Question(
-    "Who is the owner of Flutter?",
+    "Little interest or pleasure in doing things?",
     [
-      Answer("Nokia", false),
-      Answer("Samsung", false),
-      Answer("Google", true),
-      Answer("Apple", false),
+      Answer("Not at all", true),
+      Answer("On several days", true),
+      Answer("More than half the days", true),
+      Answer("Nearly everyday", true),
     ],
   ));
 
   list.add(Question(
-    "Who owns Iphone?",
+    "Feeling down,depressed or hopeless?",
     [
-      Answer("Apple", true),
-      Answer("Microsoft", false),
-      Answer("Google", false),
-      Answer("Nokia", false),
+      Answer("Not at all", true),
+      Answer("On several days", true),
+      Answer("More than half the days", true),
+      Answer("Nearly everyday", true),
     ],
   ));
 
   list.add(Question(
-    "Youtube is _________  platform?",
+    "Feeling tired or having little energy?",
     [
-      Answer("Music Sharing", false),
-      Answer("Video Sharing", false),
-      Answer("Live Streaming", false),
-      Answer("All of the above", true),
+      Answer("Not at all", true),
+      Answer("On several days", true),
+      Answer("More than half the days", true),
+      Answer("Nearly everyday", true),
     ],
   ));
 
   list.add(Question(
-    "Flutter user dart as a language?",
+    "Poor appetite or overheating?",
     [
-      Answer("True", true),
-      Answer("False", false),
+      Answer("Not at all", true),
+      Answer("On several days", true),
+      Answer("More than half the days", true),
+      Answer("Nearly everyday", true),
+    ],
+  ));
+
+  list.add(Question(
+    "Poor sleep or stress?",
+    [
+      Answer("Not at all", true),
+      Answer("On several days", true),
+      Answer("More than half the days", true),
+      Answer("Nearly everyday", true),
     ],
   ));
 
