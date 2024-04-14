@@ -9,8 +9,8 @@ import 'package:companion_app/components/my_textfield.dart';
 import 'package:companion_app/components/square_tile.dart';
 
 class RegisterPage extends StatefulWidget {
-  final Function()? onTap;
-  const RegisterPage({super.key, required this.onTap});
+  final Function()? onPressed;
+  const RegisterPage({super.key, required this.onPressed});
 
   @override
   State<RegisterPage> createState() => _RegisterPageState();
@@ -80,12 +80,26 @@ class _RegisterPageState extends State<RegisterPage> {
     return Scaffold(
       appBar: AppBar(
         title: Center(
-          child: Text("Companion App"),
+          child: Text("   Companion App"),
         ),
         backgroundColor: Colors.amber,
         elevation: 0,
         leading: Icon(Icons.menu),
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.logout))],
+        actions: [
+          Text("Login now"),
+          IconButton(
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => LoginPage(
+                      onPressed: () {},
+                    ),
+                  ),
+                );
+              },
+              icon: Icon(Icons.login_outlined))
+        ],
       ),
       backgroundColor: const Color.fromARGB(255, 5, 50, 80),
       body: SafeArea(
@@ -198,28 +212,6 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
 
                 const SizedBox(height: 50),
-
-                // not a member? register now
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Already have an account?',
-                      style: TextStyle(color: Colors.grey[700]),
-                    ),
-                    const SizedBox(width: 4),
-                    GestureDetector(
-                      onTap: widget.onTap,
-                      child: const Text(
-                        'Login now',
-                        style: TextStyle(
-                          color: Colors.blue,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ],
-                )
               ],
             ),
           ),

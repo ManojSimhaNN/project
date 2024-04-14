@@ -27,7 +27,9 @@ class Welcome extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => LoginPage(onTap: () {  },),
+                    builder: (context) => LoginPage(
+                      onPressed: () {},
+                    ),
                   ),
                 );
               },
@@ -105,7 +107,7 @@ class Welcome extends StatelessWidget {
                   shape: const StadiumBorder(),
                 ),
                 onPressed: () {
-                  Navigator.push(
+                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                       builder: (context) => QuizPage(),

@@ -1,14 +1,16 @@
 import 'package:companion_app/pages/register_page.dart';
+import 'package:companion_app/pages/welcome_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:companion_app/components/my_button.dart';
 import 'package:companion_app/components/my_textfield.dart';
 import 'package:companion_app/components/square_tile.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 
 class LoginPage extends StatefulWidget {
-  final Function()? onTap;
-  const LoginPage({super.key, required this.onTap});
+  final Function()? onPressed;
+  const LoginPage({super.key, required this.onPressed});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -31,6 +33,7 @@ class _LoginPageState extends State<LoginPage> {
         );
       },
     );
+
     //try sign in
     try {
       await FirebaseAuth.instance.signInWithEmailAndPassword(
@@ -72,7 +75,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       appBar: AppBar(
         title: Center(
-          child: Text("    Companion App"),
+          child: Text("       Companion App"),
         ),
         backgroundColor: Colors.amber,
         elevation: 0,
@@ -84,7 +87,7 @@ class _LoginPageState extends State<LoginPage> {
                 context,
                 MaterialPageRoute(
                   builder: (context) => RegisterPage(
-                    onTap: () {},
+                    onPressed: () {},
                   ),
                 ),
               );
@@ -206,9 +209,7 @@ class _LoginPageState extends State<LoginPage> {
                     SizedBox(width: 25),
 
                     // apple button
-                    SquareTile(onTap: () {
-                      
-                    }, imagePath: 'lib/images/apple.png')
+                    SquareTile(onTap: () {}, imagePath: 'lib/images/apple.png')
                   ],
                 ),
 

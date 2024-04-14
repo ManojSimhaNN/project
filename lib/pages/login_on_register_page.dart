@@ -7,7 +7,6 @@ class LoginOnRegisterPage extends StatefulWidget {
 
   @override
   State<LoginOnRegisterPage> createState() => _LoginOnRegisterPageState();
-  
 }
 
 class _LoginOnRegisterPageState extends State<LoginOnRegisterPage> {
@@ -25,11 +24,11 @@ class _LoginOnRegisterPageState extends State<LoginOnRegisterPage> {
   Widget build(BuildContext context) {
     if (showLoginPage) {
       return LoginPage(
-        onTap: togglePages,
+        onPressed: togglePages,
       );
     } else {
       return RegisterPage(
-        onTap: togglePages,
+        onPressed: togglePages,
       );
     }
   }
