@@ -1,3 +1,4 @@
+import 'package:companion_app/pages/register_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -71,12 +72,26 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       appBar: AppBar(
         title: Center(
-          child: Text("Companion App"),
+          child: Text("    Companion App"),
         ),
         backgroundColor: Colors.amber,
         elevation: 0,
-        leading: Icon(Icons.account_circle),
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.label))],
+        actions: [
+          Text("Register now"),
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => RegisterPage(
+                    onTap: () {},
+                  ),
+                ),
+              );
+            },
+            icon: Icon(Icons.account_circle_rounded),
+          )
+        ],
       ),
       backgroundColor: const Color.fromARGB(255, 5, 50, 80),
       body: SafeArea(
@@ -191,33 +206,13 @@ class _LoginPageState extends State<LoginPage> {
                     SizedBox(width: 25),
 
                     // apple button
-                    SquareTile(onTap: () {}, imagePath: 'lib/images/apple.png')
+                    SquareTile(onTap: () {
+                      
+                    }, imagePath: 'lib/images/apple.png')
                   ],
                 ),
 
                 const SizedBox(height: 50),
-
-                // not a member? register now
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Not a member?',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    const SizedBox(width: 4),
-                    GestureDetector(
-                      onTap: widget.onTap,
-                      child: const Text(
-                        'Register now',
-                        style: TextStyle(
-                          color: Colors.green,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ],
-                )
               ],
             ),
           ),

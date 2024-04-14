@@ -66,5 +66,25 @@ List<Question> getQuestions() {
     ],
   ));
 
+  list.add(Question(
+    "How many steps did you walk in an average?",
+    [
+      Answer("No walking", true),
+      Answer("5000-7000", true),
+      Answer("7000-10000", true),
+      Answer("More than 10000", true),
+    ],
+  ));
+
+  list.add(Question(
+    "Physical activity time?",
+    [
+      Answer("Not at all", true),
+      Answer("0-2 hours", true),
+      Answer("2-4 hours", true),
+      Answer("More than 4 hours", true),
+    ],
+  ));
+
   return list;
 }

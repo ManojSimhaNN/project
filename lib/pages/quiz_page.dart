@@ -1,4 +1,5 @@
 import 'package:companion_app/pages/question_model.dart';
+import 'package:companion_app/pages/recomendation.dart';
 import 'package:flutter/material.dart';
 
 class QuizPage extends StatefulWidget {
@@ -23,8 +24,6 @@ class _QuizPageState extends State<QuizPage> {
         ),
         backgroundColor: Colors.amber,
         elevation: 0,
-        leading: Icon(Icons.menu),
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.logout))],
       ),
       backgroundColor: const Color.fromARGB(255, 5, 50, 80),
       body: Container(
@@ -93,23 +92,29 @@ class _QuizPageState extends State<QuizPage> {
       margin: const EdgeInsets.symmetric(vertical: 8),
       height: 48,
       child: ElevatedButton(
-        child: Text(answer.answerText),
-        style: ElevatedButton.styleFrom(
-          foregroundColor: isSelected ? Colors.white : Colors.black,
-          backgroundColor: isSelected ? Colors.orangeAccent : Colors.white,
-          shape: const StadiumBorder(),
-        ),
-        onPressed: () {
-          if (selectedAnswer == null) {
-            if (answer.isCorrect) {
-              score++;
+          child: Text(answer.answerText),
+          style: ElevatedButton.styleFrom(
+            foregroundColor: isSelected ? Colors.white : Colors.black,
+            backgroundColor: isSelected ? Colors.orangeAccent : Colors.white,
+            shape: const StadiumBorder(),
+          ),
+          onPressed: () {
+            if (selectedAnswer == null) {
+              AlertDialog(
+                title: Text(
+                  " Please select an option. ",
+                  style: TextStyle(color: Colors.red),
+                ),
+                content: ElevatedButton(
+                  child: const Text("OK"),
+                  onPressed: () {},
+                ),
+              );
             }
             setState(() {
               selectedAnswer = answer;
             });
-          }
-        },
-      ),
+          }),
     );
   }
 
@@ -147,28 +152,20 @@ class _QuizPageState extends State<QuizPage> {
   }
 
   _showScoreDialog() {
-    bool isPassed = false;
-
-    if (score >= questionList.length * 0.6) {
-      //pass if 60 %
-      isPassed = true;
-    }
-    String title = isPassed ? "Passed " : "Failed";
-
     return AlertDialog(
       title: Text(
-        title + " | Score is $score",
-        style: TextStyle(color: isPassed ? Colors.green : Colors.redAccent),
+        " You have answered all the questions. ",
+        style: TextStyle(color: Colors.green),
       ),
       content: ElevatedButton(
-        child: const Text("Restart"),
+        child: const Text("See Recomendations"),
         onPressed: () {
-          Navigator.pop(context);
-          setState(() {
-            currentQuestionIndex = 0;
-            score = 0;
-            selectedAnswer = null;
-          });
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => Recomend(),
+            ),
+          );
         },
       ),
     );

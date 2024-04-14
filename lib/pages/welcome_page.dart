@@ -1,6 +1,7 @@
 // ignore_for_file: unused_import
 
 import 'package:companion_app/components/my_button.dart';
+import 'package:companion_app/pages/login_page.dart';
 import 'package:companion_app/pages/quiz_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +21,18 @@ class Welcome extends StatelessWidget {
         backgroundColor: Colors.amber,
         elevation: 0,
         leading: Icon(Icons.menu),
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.logout))],
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => LoginPage(onTap: () {  },),
+                  ),
+                );
+              },
+              icon: Icon(Icons.logout))
+        ],
       ),
       backgroundColor: const Color.fromARGB(255, 5, 50, 80),
       body: Column(

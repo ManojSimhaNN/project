@@ -1,3 +1,6 @@
+// ignore_for_file: unused_import
+
+import 'package:companion_app/pages/login_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -29,6 +32,7 @@ class _RegisterPageState extends State<RegisterPage> {
         );
       },
     );
+
     //try creating user
     try {
       //check if password is confirmed
