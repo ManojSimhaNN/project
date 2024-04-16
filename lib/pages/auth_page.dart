@@ -1,14 +1,11 @@
-// ignore_for_file: unused_import
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:companion_app/pages/login_on_register_page.dart';
-import 'package:companion_app/pages/login_page.dart';
+import 'package:companion_app/pages/login_or_register_page.dart';
 import 'package:companion_app/pages/home_page.dart';
-import 'package:companion_app/pages/register_page.dart';
 
 class AuthPage extends StatelessWidget {
-  const AuthPage({super.key});
+  const AuthPage({super.key, this.onTap});
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +15,11 @@ class AuthPage extends StatelessWidget {
         builder: (context, snapshot) {
           //user loggedin
           if (snapshot.hasData) {
-            return HomePage();
+            return const HomePage();
           }
           //user not loggedin
           else {
-            return LoginOnRegisterPage();
+            return const LoginOrRegisterPage();
           }
         },
       ),

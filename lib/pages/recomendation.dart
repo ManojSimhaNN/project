@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:get/get.dart';
 
 class Recomend extends StatelessWidget {
   const Recomend({super.key});
@@ -9,13 +8,7 @@ class Recomend extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       //backgroundColor: Color.fromARGB(255, 5, 50, 80),
-      appBar: AppBar(
-        title: Center(
-          child: Text("Companion App"),
-        ),
-        backgroundColor: Colors.amber,
-        elevation: 0,
-      ),
+      appBar: AppBar(),
 
       body: Column(
         children: <Widget>[
@@ -42,10 +35,8 @@ class Recomend extends StatelessWidget {
               ),
             ],
           ),
-          
-          ],
-        ),
-      );
-    
+        ],
+      ),
+    );
   }
 }

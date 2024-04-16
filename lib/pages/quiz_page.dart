@@ -18,13 +18,7 @@ class _QuizPageState extends State<QuizPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Center(
-          child: Text("Companion App"),
-        ),
-        backgroundColor: Colors.amber,
-        elevation: 0,
-      ),
+      appBar: AppBar(),
       backgroundColor: const Color.fromARGB(255, 5, 50, 80),
       body: Container(
         margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 32),

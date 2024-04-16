@@ -9,8 +9,11 @@ import 'package:companion_app/components/my_textfield.dart';
 import 'package:companion_app/components/square_tile.dart';
 
 class RegisterPage extends StatefulWidget {
-  final Function()? onPressed;
-  const RegisterPage({super.key, required this.onPressed});
+  final Function()? onTap;
+  const RegisterPage({
+    super.key,
+    required this.onTap,
+  });
 
   @override
   State<RegisterPage> createState() => _RegisterPageState();
@@ -54,6 +57,9 @@ class _RegisterPageState extends State<RegisterPage> {
 
       //error message
       showErrorMessage(e.code);
+    } finally {
+      // ignore: use_build_context_synchronously
+      showDialog(context: context, builder: (_) => _showAlert());
     }
   }
 
@@ -79,21 +85,18 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-          child: Text("   Companion App"),
-        ),
-        backgroundColor: Colors.amber,
-        elevation: 0,
-        leading: Icon(Icons.menu),
         actions: [
-          Text("Login now"),
+          Text(
+            style: TextStyle(color: Colors.black),
+            "Login now",
+          ),
           IconButton(
               onPressed: () {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
                     builder: (context) => LoginPage(
-                      onPressed: () {},
+                      onTap: () {},
                     ),
                   ),
                 );
@@ -122,7 +125,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 Text(
                   'Let\'s create an account for you!',
                   style: TextStyle(
-                    color: Colors.grey[700],
+                    color: Colors.white,
                     fontSize: 16,
                   ),
                 ),
@@ -216,6 +219,31 @@ class _RegisterPageState extends State<RegisterPage> {
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  _showAlert() {
+    return AlertDialog(
+      title: Text(
+        " User registered successfully.",
+        style: TextStyle(
+          color: Colors.green,
+          fontSize: 20,
+        ),
+      ),
+      content: ElevatedButton(
+        child: const Text("Go to login page"),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => LoginPage(
+                onTap: () {},
+              ),
+            ),
+          );
+        },
       ),
     );
   }

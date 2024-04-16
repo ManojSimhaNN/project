@@ -1,16 +1,17 @@
+import 'package:companion_app/pages/forgot_password.dart';
 import 'package:companion_app/pages/register_page.dart';
-import 'package:companion_app/pages/welcome_page.dart';
+import 'package:companion_app/services/google_auth.dart';
+import 'package:flutter/widgets.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:companion_app/components/my_button.dart';
 import 'package:companion_app/components/my_textfield.dart';
 import 'package:companion_app/components/square_tile.dart';
-import 'package:get/get_navigation/get_navigation.dart';
 
 class LoginPage extends StatefulWidget {
-  final Function()? onPressed;
-  const LoginPage({super.key, required this.onPressed});
+  final Function()? onTap;
+  const LoginPage({super.key, required this.onTap});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -47,12 +48,10 @@ class _LoginPageState extends State<LoginPage> {
       //pop the loading circle
       Navigator.pop(context);
 
-      //error message
       showErrorMessage(e.code);
     }
   }
 
-  //error message to user
   void showErrorMessage(String message) {
     showDialog(
       context: context,
@@ -62,7 +61,9 @@ class _LoginPageState extends State<LoginPage> {
           title: Center(
             child: Text(
               message,
-              style: const TextStyle(color: Colors.white),
+              style: const TextStyle(
+                color: Colors.white,
+              ),
             ),
           ),
         );
@@ -70,24 +71,26 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
+  
+
+  //error message to user
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-          child: Text("       Companion App"),
-        ),
-        backgroundColor: Colors.amber,
-        elevation: 0,
         actions: [
-          Text("Register now"),
+          Text(
+            style: TextStyle(color: Colors.black),
+            "Register now",
+          ),
           IconButton(
             onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => RegisterPage(
-                    onPressed: () {},
+                    onTap: () {},
                   ),
                 ),
               );
@@ -148,9 +151,17 @@ class _LoginPageState extends State<LoginPage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Text(
-                        'Forgot Password?',
-                        style: TextStyle(color: Colors.redAccent),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ForgotPassword()));
+                        },
+                        child: Text(
+                          'Forgot Password?',
+                          style: TextStyle(color: Colors.redAccent),
+                        ),
                       ),
                     ],
                   ),
@@ -201,9 +212,13 @@ class _LoginPageState extends State<LoginPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     // google button
-                    SquareTile(
-                      imagePath: 'lib/images/google.png',
-                      onTap: () {},
+                    GestureDetector(
+                      child: SquareTile(
+                        imagePath: 'lib/images/google.png',
+                        onTap: () {
+                          GoogleAuthMethod().signInWithGoogle(context);
+                        },
+                      ),
                     ),
 
                     SizedBox(width: 25),
