@@ -51,13 +51,13 @@ class _QuizPageState extends State<QuizPage> {
           width: double.infinity,
           padding: const EdgeInsets.all(32),
           decoration: BoxDecoration(
-            color: Colors.orangeAccent,
+            color: Colors.white,
             borderRadius: BorderRadius.circular(16),
           ),
           child: Text(
             questionList[currentQuestionIndex].questionText,
             style: const TextStyle(
-              color: Colors.white,
+              color: Colors.black,
               fontSize: 18,
               fontWeight: FontWeight.w600,
             ),

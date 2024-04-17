@@ -26,7 +26,6 @@ class _HomePageState extends State<HomePage> {
           onPressed: () {},
           icon: Icon(Icons.menu_rounded),
         ),
-        actions: [IconButton(onPressed: signUserOut, icon: Icon(Icons.logout))],
       ),
       body: Container(
         alignment: Alignment.center,
