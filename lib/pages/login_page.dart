@@ -84,26 +84,46 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(height: 50),
-
                 // logo
-                const Icon(
-                  Icons.login,
-                  size: 100,
+                const Image(
+                  image: AssetImage('lib/images/companionlogo.png'),
+                  width: 250,
+                  height: 250,
                 ),
 
-                const SizedBox(height: 50),
-
                 // welcome back, you've been missed!
-                const Text(
-                  'Welcome back you\'ve been missed!',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 25.0),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Divider(
+                          thickness: 0.5,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 10.0),
+                        child: Text(
+                          'Welcome back you have been missed  !!!',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18.0,
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: Divider(
+                          thickness: 0.5,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
 
-                const SizedBox(height: 25),
+                const SizedBox(height: 40),
+
                 Padding(
                   padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                   child: Form(
@@ -193,21 +213,30 @@ class _LoginPageState extends State<LoginPage> {
                   height: 20.0,
                 ),
 
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => ForgotPassword()));
-                  },
-                  child: const Text("Forgot Password?",
-                      style: TextStyle(
-                          color: Colors.red,
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.w500)),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 30.0,
+                    vertical: 8.0,
+                  ),
+                  child: Container(
+                    alignment: Alignment.centerRight,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ForgotPassword()));
+                      },
+                      child: const Text("Forgot Password?",
+                          style: TextStyle(
+                              color: Colors.red,
+                              fontSize: 18.0,
+                              fontWeight: FontWeight.w500)),
+                    ),
+                  ),
                 ),
                 const SizedBox(
-                  height: 40.0,
+                  height: 10.0,
                 ),
 
                 const Padding(
@@ -224,7 +253,10 @@ class _LoginPageState extends State<LoginPage> {
                         padding: EdgeInsets.symmetric(horizontal: 10.0),
                         child: Text(
                           'Or continue with',
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18.0,
+                          ),
                         ),
                       ),
                       Expanded(
@@ -237,7 +269,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
 
-                const SizedBox(height: 50),
+                const SizedBox(height: 30),
 
                 // google + apple sign in buttons
                 Row(
@@ -255,7 +287,7 @@ class _LoginPageState extends State<LoginPage> {
                   ],
                 ),
 
-                const SizedBox(height: 50),
+                const SizedBox(height: 30),
 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,

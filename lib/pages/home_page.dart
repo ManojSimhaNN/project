@@ -1,6 +1,11 @@
+import 'package:companion_app/pages/contacts.dart';
+import 'package:companion_app/pages/login_page.dart';
+import 'package:companion_app/pages/todolist.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:companion_app/pages/quiz_page.dart';
+import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -22,9 +27,109 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 5, 50, 80),
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {},
-          icon: Icon(Icons.menu_rounded),
+        backgroundColor: Color.fromARGB(255, 0, 50, 80),
+        actions: [
+          IconButton(
+              color: Colors.white,
+              onPressed: () {
+                signUserOut();
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => LoginPage(
+                      onTap: () {},
+                    ),
+                  ),
+                );
+              },
+              icon: Icon(Icons.logout))
+        ],
+      ),
+      drawer: Drawer(
+        child: Container(
+          color: Color.fromARGB(255, 0, 50, 80),
+          child: ListView(
+            children: [
+              DrawerHeader(
+                child: Center(
+                  child: Icon(
+                    Icons.account_circle,
+                    size: 60.0,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              ListTile(
+                title: Center(
+                  child: Text(
+                    "To Do List",
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ToDoList(),
+                    ),
+                  );
+                },
+              ),
+              Divider(
+                thickness: 0.5,
+                color: Colors.white,
+              ),
+              ListTile(
+                title: Center(
+                  child: Text(
+                    "Therapist Contacts",
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Contacts(),
+                    ),
+                  );
+                },
+              ),
+              Divider(
+                thickness: 0.5,
+                color: Colors.white,
+              ),
+              ListTile(
+                title: Center(
+                  child: Text(
+                    "Start Quiz",
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => QuizPage(),
+                    ),
+                  );
+                },
+              ),
+              Divider(
+                thickness: 0.5,
+                color: Colors.white,
+              ),
+            ],
+          ),
         ),
       ),
       body: Container(
@@ -74,31 +179,6 @@ class _HomePageState extends State<HomePage> {
             ),
             SizedBox(
               height: 200,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => QuizPage(),
-                      ),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    foregroundColor: Colors.black,
-                    backgroundColor: Colors.white,
-                    fixedSize: Size(
-                      150,
-                      50,
-                    ),
-                    shape: const StadiumBorder(),
-                  ),
-                  child: Text(style: TextStyle(fontSize: 20), "Start Quiz"),
-                ),
-              ],
             ),
           ],
         ),

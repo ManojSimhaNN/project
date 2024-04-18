@@ -28,11 +28,11 @@ class _RegisterPageState extends State<RegisterPage> {
   final _formkey = GlobalKey<FormState>();
 
   void signUserUp() async {
-    if (password != null &&
+    if (passwordController.text != "" &&
         nameController.text != "" &&
         emailController.text != "") {
       try {
-        UserCredential userCredential = await FirebaseAuth.instance
+        await FirebaseAuth.instance
             .createUserWithEmailAndPassword(email: email, password: password);
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
             content: Text(
@@ -41,7 +41,11 @@ class _RegisterPageState extends State<RegisterPage> {
         )));
         // ignore: use_build_context_synchronously
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => HomePage()));
+            context,
+            MaterialPageRoute(
+                builder: (context) => LoginPage(
+                      onTap: () {},
+                    )));
       } on FirebaseAuthException catch (e) {
         if (e.code == 'weak-password') {
           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
@@ -72,26 +76,45 @@ class _RegisterPageState extends State<RegisterPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(height: 50),
-
                 // logo
-                const Icon(
-                  Icons.lock,
-                  size: 50,
+                const Image(
+                  image: AssetImage('lib/images/companionlogo.png'),
+                  width: 250,
+                  height: 250,
                 ),
 
-                const SizedBox(height: 50),
-
                 // Let\'s create an account for you!
-                Text(
-                  'Let\'s create an account for you!',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 25.0),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Divider(
+                          thickness: 0.5,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 10.0),
+                        child: Text(
+                          'Let\'s create an account for you!',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18.0,
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: Divider(
+                          thickness: 0.5,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
 
-                const SizedBox(height: 25),
+                const SizedBox(height: 40),
 
                 Padding(
                   padding: const EdgeInsets.only(left: 20.0, right: 20.0),
@@ -191,7 +214,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             padding: EdgeInsets.symmetric(
                                 vertical: 13.0, horizontal: 30.0),
                             decoration: BoxDecoration(
-                                color: Color(0xFF273671),
+                                color: Colors.black,
                                 borderRadius: BorderRadius.circular(30)),
                             child: Center(
                               child: Text(
@@ -221,7 +244,10 @@ class _RegisterPageState extends State<RegisterPage> {
                                 padding: EdgeInsets.symmetric(horizontal: 10.0),
                                 child: Text(
                                   'Or continue with',
-                                  style: TextStyle(color: Colors.white),
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18.0,
+                                  ),
                                 ),
                               ),
                               Expanded(
@@ -234,7 +260,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           ),
                         ),
 
-                        const SizedBox(height: 50),
+                        const SizedBox(height: 30),
 
                         // google + apple sign in buttons
                         Row(
@@ -250,7 +276,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           ],
                         ),
 
-                        const SizedBox(height: 50),
+                        const SizedBox(height: 30),
 
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
