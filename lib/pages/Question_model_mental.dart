@@ -67,22 +67,52 @@ List<Question> getQuestions() {
   ));
 
   list.add(Question(
-    "How many steps did you walk in an average?",
+    "How often, if at all, do you pray or meditate?",
     [
-      Answer("No walking", true),
-      Answer("5000-7000", true),
-      Answer("7000-10000", true),
-      Answer("More than 10000", true),
+      Answer("Everyday", true),
+      Answer("Once a week", true),
+      Answer("Once a month", true),
+      Answer("Never", true),
     ],
   ));
 
   list.add(Question(
-    "Physical activity time?",
+    "I believe I can achieve my goals, even if there are obstacles.",
     [
       Answer("Not at all", true),
-      Answer("0-2 hours", true),
-      Answer("2-4 hours", true),
-      Answer("More than 4 hours", true),
+      Answer("Rarely true", true),
+      Answer("Sometimes true", true),
+      Answer("Often true", true),
+    ],
+  ));
+
+  list.add(Question(
+    "Under pressure, I stay focused and think clearly.",
+    [
+      Answer("Not at all", true),
+      Answer("Rarely true", true),
+      Answer("Sometimes true", true),
+      Answer("Often true", true),
+    ],
+  ));
+
+  list.add(Question(
+    "I am not easily discouraged by failure.",
+    [
+      Answer("Not at all", true),
+      Answer("Rarely true", true),
+      Answer("Sometimes true", true),
+      Answer("Often true", true),
+    ],
+  ));
+
+  list.add(Question(
+    "I tend to bounce back after illness, injury, or other hardships.",
+    [
+      Answer("Not at all", true),
+      Answer("Rarely true", true),
+      Answer("Sometimes true", true),
+      Answer("Often true", true),
     ],
   ));
 

@@ -1,14 +1,14 @@
+import 'package:flutter/material.dart';
 import 'package:companion_app/pages/question_model_physical.dart';
 import 'package:companion_app/pages/recomend_physical.dart';
-import 'package:flutter/material.dart';
 
-class QuizPage extends StatefulWidget {
-  const QuizPage({super.key});
+class PhysicalQuizPage extends StatefulWidget {
+  const PhysicalQuizPage({super.key});
   @override
-  State<QuizPage> createState() => _QuizPageState();
+  State<PhysicalQuizPage> createState() => _PhysicalQuizPageState();
 }
 
-class _QuizPageState extends State<QuizPage> {
+class _PhysicalQuizPageState extends State<PhysicalQuizPage> {
   //define the datas
   List<Question> questionList = getQuestions();
   int currentQuestionIndex = 0;

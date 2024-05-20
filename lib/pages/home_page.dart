@@ -1,7 +1,10 @@
 import 'package:companion_app/pages/contacts.dart';
 import 'package:companion_app/pages/login_page.dart';
+import 'package:companion_app/pages/mental.dart';
+import 'package:companion_app/pages/physical.dart';
 import 'package:companion_app/pages/todolist.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:companion_app/pages/quiz_page.dart';
 import 'package:flutter/widgets.dart';
@@ -27,10 +30,10 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 5, 50, 80),
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 0, 50, 80),
+        backgroundColor: Color.fromARGB(255, 255, 255, 255),
         actions: [
           IconButton(
-              color: Colors.white,
+              color: Colors.black,
               onPressed: () {
                 signUserOut();
                 Navigator.push(
@@ -105,29 +108,6 @@ class _HomePageState extends State<HomePage> {
                 thickness: 0.5,
                 color: Colors.white,
               ),
-              ListTile(
-                title: Center(
-                  child: Text(
-                    "Start Quiz",
-                    style: TextStyle(
-                      fontSize: 18.0,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => QuizPage(),
-                    ),
-                  );
-                },
-              ),
-              Divider(
-                thickness: 0.5,
-                color: Colors.white,
-              ),
             ],
           ),
         ),
@@ -178,7 +158,56 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             SizedBox(
-              height: 200,
+              height: 50,
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color.fromARGB(0, 0, 0, 0),
+                shape: const StadiumBorder(),
+                fixedSize: Size(700, 55),
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => PhysicalQuizPage(),
+                  ),
+                );
+              },
+              child: const Text(
+                "Physical Health Assesment",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 22.0,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color.fromARGB(0, 0, 0, 0),
+                shape: const StadiumBorder(),
+                fixedSize: Size(700, 55),
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MentalQuizPage(),
+                  ),
+                );
+              },
+              child: const Text(
+                "Mental Health Assesment",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 22.0,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
             ),
           ],
         ),

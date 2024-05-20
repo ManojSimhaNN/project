@@ -7,6 +7,9 @@ class Contacts extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 0, 50, 80),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+      ),
     );
   }
 }

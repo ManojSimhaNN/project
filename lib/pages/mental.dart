@@ -1,14 +1,14 @@
-import 'package:companion_app/pages/question_model_physical.dart';
-import 'package:companion_app/pages/recomend_physical.dart';
 import 'package:flutter/material.dart';
+import 'package:companion_app/pages/question_model_mental.dart';
+import 'package:companion_app/pages/recomend_mental.dart';
 
-class QuizPage extends StatefulWidget {
-  const QuizPage({super.key});
+class MentalQuizPage extends StatefulWidget {
+  const MentalQuizPage({super.key});
   @override
-  State<QuizPage> createState() => _QuizPageState();
+  State<MentalQuizPage> createState() => _MentalQuizPageState();
 }
 
-class _QuizPageState extends State<QuizPage> {
+class _MentalQuizPageState extends State<MentalQuizPage> {
   //define the datas
   List<Question> questionList = getQuestions();
   int currentQuestionIndex = 0;
