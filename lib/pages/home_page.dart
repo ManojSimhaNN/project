@@ -4,11 +4,7 @@ import 'package:companion_app/pages/mental.dart';
 import 'package:companion_app/pages/physical.dart';
 import 'package:companion_app/pages/todolist.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:companion_app/pages/quiz_page.dart';
-import 'package:flutter/widgets.dart';
-import 'package:get/get.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -82,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                 },
               ),
               Divider(
-                thickness: 0.5,
+                thickness: 1.0,
                 color: Colors.white,
               ),
               ListTile(
@@ -105,7 +101,23 @@ class _HomePageState extends State<HomePage> {
                 },
               ),
               Divider(
-                thickness: 0.5,
+                thickness: 1.0,
+                color: Colors.white,
+              ),
+              ListTile(
+                title: Center(
+                  child: Text(
+                    "Chat Bot(Coming Soon)",
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+                onTap: () {},
+              ),
+              Divider(
+                thickness: 1.0,
                 color: Colors.white,
               ),
             ],
@@ -149,7 +161,7 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Let's quickly take personal health questionnaire before we get atarted!",
+                  "Let's quickly take personal health questionnaire before we get started!",
                   style: TextStyle(
                     fontSize: 20,
                     color: Colors.white,
@@ -175,7 +187,7 @@ class _HomePageState extends State<HomePage> {
                 );
               },
               child: const Text(
-                "Physical Health Assesment",
+                "Physical Activity Assesment",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 22.0,

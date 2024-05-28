@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:companion_app/pages/question_model_physical.dart';
 import 'package:companion_app/pages/recomend_physical.dart';
 import 'package:flutter/material.dart';
@@ -146,20 +148,28 @@ class _QuizPageState extends State<QuizPage> {
   }
 
   _showScoreDialog() {
+    bool isPassed = false;
+
+    if (score >= questionList.length * 0.6) {
+      //pass if 60 %
+      isPassed = true;
+    }
+    String title = isPassed ? "Passed " : "Failed";
+
     return AlertDialog(
       title: Text(
-        " You have answered all the questions. ",
-        style: TextStyle(color: Colors.green),
+        title + " | Score is $score",
+        style: TextStyle(color: isPassed ? Colors.green : Colors.redAccent),
       ),
       content: ElevatedButton(
-        child: const Text("See Recomendations"),
+        child: const Text("Restart"),
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => Recomend(),
-            ),
-          );
+          Navigator.pop(context);
+          setState(() {
+            currentQuestionIndex = 0;
+            score = 0;
+            selectedAnswer = null;
+          });
         },
       ),
     );

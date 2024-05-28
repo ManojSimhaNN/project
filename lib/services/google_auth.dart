@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import, unnecessary_null_comparison
+
 import 'package:companion_app/pages/home_page.dart';
 import 'package:companion_app/services/database.dart';
 import 'package:firebase_auth/firebase_auth.dart';

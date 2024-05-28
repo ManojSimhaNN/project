@@ -1,3 +1,6 @@
+// ignore_for_file: unused_local_variable
+
+import 'package:companion_app/pages/recomend_mental_1.dart';
 import 'package:flutter/material.dart';
 import 'package:companion_app/pages/question_model_mental.dart';
 import 'package:companion_app/pages/recomend_mental.dart';
@@ -86,29 +89,23 @@ class _MentalQuizPageState extends State<MentalQuizPage> {
       margin: const EdgeInsets.symmetric(vertical: 8),
       height: 48,
       child: ElevatedButton(
-          child: Text(answer.answerText),
-          style: ElevatedButton.styleFrom(
-            foregroundColor: isSelected ? Colors.white : Colors.black,
-            backgroundColor: isSelected ? Colors.orangeAccent : Colors.white,
-            shape: const StadiumBorder(),
-          ),
-          onPressed: () {
-            if (selectedAnswer == null) {
-              AlertDialog(
-                title: Text(
-                  " Please select an option. ",
-                  style: TextStyle(color: Colors.red),
-                ),
-                content: ElevatedButton(
-                  child: const Text("OK"),
-                  onPressed: () {},
-                ),
-              );
+        child: Text(answer.answerText),
+        style: ElevatedButton.styleFrom(
+          foregroundColor: isSelected ? Colors.white : Colors.black,
+          backgroundColor: isSelected ? Colors.orangeAccent : Colors.white,
+          shape: const StadiumBorder(),
+        ),
+        onPressed: () {
+          if (selectedAnswer == null) {
+            if (answer.isCorrect) {
+              score++;
             }
             setState(() {
               selectedAnswer = answer;
             });
-          }),
+          }
+        },
+      ),
     );
   }
 
@@ -146,21 +143,60 @@ class _MentalQuizPageState extends State<MentalQuizPage> {
   }
 
   _showScoreDialog() {
+    bool isPassed = false;
+
+    if (score >= questionList.length * 0.6) {
+      //pass if 60 %
+      isPassed = true;
+    }
     return AlertDialog(
       title: Text(
-        " You have answered all the questions. ",
+        " You have Answered all the Questions",
         style: TextStyle(color: Colors.green),
       ),
-      content: ElevatedButton(
-        child: const Text("See Recomendations"),
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => Recomend(),
+      content: Row(
+        children: [
+          SizedBox(
+            width: 40,
+          ),
+          ElevatedButton(
+            child: const Text("Restart"),
+            onPressed: () {
+              Navigator.pop(context);
+              setState(() {
+                currentQuestionIndex = 0;
+                score = 0;
+                selectedAnswer = null;
+              });
+            },
+          ),
+          SizedBox(
+            width: 50,
+          ),
+          ElevatedButton(
+            onPressed: () {
+              if (score >= questionList.length * 0.6) {
+                //pass if 60 %
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => RecomendMental(),
+                  ),
+                );
+              } else {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => RecomendMental1(),
+                  ),
+                );
+              }
+            },
+            child: const Text(
+              "See Recomendations",
             ),
-          );
-        },
+          ),
+        ],
       ),
     );
   }

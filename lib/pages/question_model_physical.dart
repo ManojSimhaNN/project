@@ -19,8 +19,8 @@ List<Question> getQuestions() {
   list.add(Question(
     "How often do you play any sport?",
     [
-      Answer("Not at all", true),
-      Answer("On several days", true),
+      Answer("Not at all", false),
+      Answer("On several days", false),
       Answer("More than half the days", true),
       Answer("Nearly everyday", true),
     ],
@@ -29,8 +29,8 @@ List<Question> getQuestions() {
   list.add(Question(
     "How often do you travel?",
     [
-      Answer("Not at all", true),
-      Answer("On several days", true),
+      Answer("Not at all", false),
+      Answer("On several days", false),
       Answer("More than half the days", true),
       Answer("Nearly everyday", true),
     ],
@@ -39,8 +39,8 @@ List<Question> getQuestions() {
   list.add(Question(
     "Sleep time?",
     [
-      Answer("5-6 Hours", true),
-      Answer("6-7 Hours", true),
+      Answer("5-6 Hours", false),
+      Answer("6-7 Hours", false),
       Answer("7-8 Hours", true),
       Answer("More than 8 Hours", true),
     ],
@@ -51,8 +51,8 @@ List<Question> getQuestions() {
     [
       Answer("Not at all", true),
       Answer("On several days", true),
-      Answer("More than half the days", true),
-      Answer("Nearly everyday", true),
+      Answer("More than half the days", false),
+      Answer("Nearly everyday", false),
     ],
   ));
 
@@ -61,16 +61,16 @@ List<Question> getQuestions() {
     [
       Answer("Not at all", true),
       Answer("On several days", true),
-      Answer("More than half the days", true),
-      Answer("Nearly everyday", true),
+      Answer("More than half the days", false),
+      Answer("Nearly everyday", false),
     ],
   ));
 
   list.add(Question(
     "How many steps did you walk in an average?",
     [
-      Answer("No walking", true),
-      Answer("5000-7000", true),
+      Answer("No walking", false),
+      Answer("5000-7000", false),
       Answer("7000-10000", true),
       Answer("More than 10000", true),
     ],
@@ -79,8 +79,8 @@ List<Question> getQuestions() {
   list.add(Question(
     "How often do you workout in gym or home?",
     [
-      Answer("Not at all", true),
-      Answer("0-2 hours", true),
+      Answer("Not at all", false),
+      Answer("0-2 hours", false),
       Answer("2-4 hours", true),
       Answer("More than 4 hours", true),
     ],
@@ -91,8 +91,8 @@ List<Question> getQuestions() {
     [
       Answer("2-4 hours", true),
       Answer("4-6 hours", true),
-      Answer("6-8 hours", true),
-      Answer("8-10 hours", true),
+      Answer("6-8 hours", false),
+      Answer("8-10 hours", false),
     ],
   ));
 

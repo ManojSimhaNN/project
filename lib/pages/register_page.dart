@@ -1,4 +1,4 @@
-// ignore_for_file: unused_import
+// ignore_for_file: unused_import, unnecessary_import
 
 import 'package:companion_app/pages/home_page.dart';
 import 'package:companion_app/pages/login_page.dart';

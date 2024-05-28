@@ -21,8 +21,8 @@ List<Question> getQuestions() {
     [
       Answer("Not at all", true),
       Answer("On several days", true),
-      Answer("More than half the days", true),
-      Answer("Nearly everyday", true),
+      Answer("More than half the days", false),
+      Answer("Nearly everyday", false),
     ],
   ));
 
@@ -31,8 +31,8 @@ List<Question> getQuestions() {
     [
       Answer("Not at all", true),
       Answer("On several days", true),
-      Answer("More than half the days", true),
-      Answer("Nearly everyday", true),
+      Answer("More than half the days", false),
+      Answer("Nearly everyday", false),
     ],
   ));
 
@@ -41,18 +41,18 @@ List<Question> getQuestions() {
     [
       Answer("Not at all", true),
       Answer("On several days", true),
-      Answer("More than half the days", true),
-      Answer("Nearly everyday", true),
+      Answer("More than half the days", false),
+      Answer("Nearly everyday", false),
     ],
   ));
 
   list.add(Question(
-    "Poor appetite or overheating?",
+    "Poor appetite or overeating?",
     [
       Answer("Not at all", true),
       Answer("On several days", true),
-      Answer("More than half the days", true),
-      Answer("Nearly everyday", true),
+      Answer("More than half the days", false),
+      Answer("Nearly everyday", false),
     ],
   ));
 
@@ -61,8 +61,8 @@ List<Question> getQuestions() {
     [
       Answer("Not at all", true),
       Answer("On several days", true),
-      Answer("More than half the days", true),
-      Answer("Nearly everyday", true),
+      Answer("More than half the days", false),
+      Answer("Nearly everyday", false),
     ],
   ));
 
@@ -71,16 +71,16 @@ List<Question> getQuestions() {
     [
       Answer("Everyday", true),
       Answer("Once a week", true),
-      Answer("Once a month", true),
-      Answer("Never", true),
+      Answer("Once a month", false),
+      Answer("Never", false),
     ],
   ));
 
   list.add(Question(
     "I believe I can achieve my goals, even if there are obstacles.",
     [
-      Answer("Not at all", true),
-      Answer("Rarely true", true),
+      Answer("Not at all", false),
+      Answer("Rarely true", false),
       Answer("Sometimes true", true),
       Answer("Often true", true),
     ],
@@ -89,8 +89,8 @@ List<Question> getQuestions() {
   list.add(Question(
     "Under pressure, I stay focused and think clearly.",
     [
-      Answer("Not at all", true),
-      Answer("Rarely true", true),
+      Answer("Not at all", false),
+      Answer("Rarely true", false),
       Answer("Sometimes true", true),
       Answer("Often true", true),
     ],
@@ -99,8 +99,8 @@ List<Question> getQuestions() {
   list.add(Question(
     "I am not easily discouraged by failure.",
     [
-      Answer("Not at all", true),
-      Answer("Rarely true", true),
+      Answer("Not at all", false),
+      Answer("Rarely true", false),
       Answer("Sometimes true", true),
       Answer("Often true", true),
     ],
@@ -109,8 +109,8 @@ List<Question> getQuestions() {
   list.add(Question(
     "I tend to bounce back after illness, injury, or other hardships.",
     [
-      Answer("Not at all", true),
-      Answer("Rarely true", true),
+      Answer("Not at all", false),
+      Answer("Rarely true", false),
       Answer("Sometimes true", true),
       Answer("Often true", true),
     ],

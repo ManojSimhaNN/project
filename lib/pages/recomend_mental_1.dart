@@ -1,13 +1,15 @@
 // ignore_for_file: unused_import, unnecessary_import
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:hyperlink/hyperlink.dart';
 import 'package:url_launcher/link.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class RecomendMental extends StatelessWidget {
-  const RecomendMental({super.key});
+class RecomendMental1 extends StatelessWidget {
+  const RecomendMental1({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,12 +25,12 @@ class RecomendMental extends StatelessWidget {
                   child: Column(
                     children: [
                       Container(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 152, vertical: 80),
                         height: 200,
                         color: Color.fromARGB(255, 5, 50, 80),
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 145, vertical: 80),
                         child: Text(
-                          "You are doing good,can do better.",
+                          "Do Meditation for atleast 1 Hour.",
                           style: TextStyle(
                               fontSize: 30,
                               fontWeight: FontWeight.w400,
@@ -39,9 +41,9 @@ class RecomendMental extends StatelessWidget {
                         height: 200,
                         color: Colors.orange,
                         padding:
-                            EdgeInsets.symmetric(horizontal: 210, vertical: 80),
+                            EdgeInsets.symmetric(horizontal: 185, vertical: 80),
                         child: Text(
-                          "Travel more to explore!!.",
+                          "Socialize more with friends.",
                           style: TextStyle(
                             fontSize: 30,
                             fontWeight: FontWeight.w400,
@@ -56,7 +58,7 @@ class RecomendMental extends StatelessWidget {
                         child: Link(
                           target: LinkTarget.blank,
                           uri: Uri.parse(
-                              'https://youtu.be/O9qRyFOLdQk?si=uLEd2ezBc6yAgqo1'),
+                              'https://youtu.be/tBGvOmUhhq4?si=xt7P2wIULzXMq9jH'),
                           builder: (context, followLink) {
                             return TextButton(
                               onPressed: followLink,
@@ -77,7 +79,7 @@ class RecomendMental extends StatelessWidget {
                         child: Link(
                           target: LinkTarget.blank,
                           uri: Uri.parse(
-                              'https://youtu.be/2NZDp0E-HFc?si=wBblexoAdU6ycl5V'),
+                              'https://youtu.be/ga-MniJxQz8?si=KlvZdIM7aQUzb1bV'),
                           builder: (context, followLink) {
                             return TextButton(
                               onPressed: followLink,

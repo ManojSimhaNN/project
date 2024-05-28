@@ -1,9 +1,6 @@
-import 'package:companion_app/pages/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:companion_app/pages/register_page.dart';
-import 'package:flutter/widgets.dart';
-import 'package:companion_app/components/my_textfield.dart';
 
 class ForgotPassword extends StatefulWidget {
   ForgotPassword({super.key});
