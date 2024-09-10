@@ -21,6 +21,7 @@ class _MentalQuizPageState extends State<MentalQuizPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawerEdgeDragWidth: MediaQuery.of(context).size.width,
       appBar: AppBar(),
       backgroundColor: const Color.fromARGB(255, 5, 50, 80),
       body: Container(
@@ -50,8 +51,8 @@ class _MentalQuizPageState extends State<MentalQuizPage> {
         ),
         const SizedBox(height: 20),
         Container(
+          width: MediaQuery.of(context).size.width,
           alignment: Alignment.center,
-          width: double.infinity,
           padding: const EdgeInsets.all(32),
           decoration: BoxDecoration(
             color: Colors.white,
@@ -85,7 +86,7 @@ class _MentalQuizPageState extends State<MentalQuizPage> {
     bool isSelected = answer == selectedAnswer;
 
     return Container(
-      width: double.infinity,
+      width: MediaQuery.of(context).size.width,
       margin: const EdgeInsets.symmetric(vertical: 8),
       height: 48,
       child: ElevatedButton(
@@ -156,11 +157,11 @@ class _MentalQuizPageState extends State<MentalQuizPage> {
       ),
       content: Row(
         children: [
-          SizedBox(
-            width: 40,
-          ),
           ElevatedButton(
-            child: const Text("Restart"),
+            child: const Text(
+              "Restart",
+              style: TextStyle(fontSize: 10),
+            ),
             onPressed: () {
               Navigator.pop(context);
               setState(() {
@@ -169,9 +170,6 @@ class _MentalQuizPageState extends State<MentalQuizPage> {
                 selectedAnswer = null;
               });
             },
-          ),
-          SizedBox(
-            width: 50,
           ),
           ElevatedButton(
             onPressed: () {
@@ -194,6 +192,7 @@ class _MentalQuizPageState extends State<MentalQuizPage> {
             },
             child: const Text(
               "See Recomendations",
+              style: TextStyle(fontSize: 10),
             ),
           ),
         ],

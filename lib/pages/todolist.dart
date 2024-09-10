@@ -72,6 +72,7 @@ class _ToDoListState extends State<ToDoList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawerEdgeDragWidth: MediaQuery.of(context).size.width,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           openBox();
@@ -109,7 +110,7 @@ class _ToDoListState extends State<ToDoList> {
               height: 10.0,
             ),
             Text(
-              "Good Morning",
+              "Have a Good Day",
               textAlign: TextAlign.left,
               style: TextStyle(
                 color: Colors.white,

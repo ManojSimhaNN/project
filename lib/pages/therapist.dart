@@ -19,68 +19,66 @@ class _TherapistState extends State<Therapist> {
               child: Column(
                 children: [
                   Container(
+                    width: MediaQuery.of(context).size.width,
                     height: 200,
                     color: Colors.amber,
                     child: Padding(
                       padding: const EdgeInsets.only(
-                        right: 305,
                         top: 10,
                         left: 10,
                       ),
                       child: Text(
                         "Name:Dr.Avinash\nSpecialization:Orthopediatrition\nPhone no:123456789\nLocation:Bengaluru",
                         style: TextStyle(
-                          fontSize: 30,
+                          fontSize: 10,
                         ),
                       ),
                     ),
                   ),
                   Container(
+                    width: MediaQuery.of(context).size.width,
                     height: 200,
                     color: Colors.white,
                     child: Padding(
                       padding: const EdgeInsets.only(
-                        right: 380,
                         top: 10,
                         left: 10,
                       ),
                       child: Text(
                         "Name:Dr.Shetal\nSpecialization:Psycologist\nPhone no:123456789\nLocation:Tumakuru",
                         style: TextStyle(
-                          fontSize: 30,
+                          fontSize: 10,
                         ),
                       ),
                     ),
                   ),
                   Container(
+                    width: MediaQuery.of(context).size.width,
                     height: 200,
                     color: Colors.orange,
                     child: Padding(
                       padding: const EdgeInsets.only(
-                        right: 380,
                         top: 10,
                         left: 10,
                       ),
                       child: Text(
                         "Name:Dr.Bhaskar\nSpecialization:Psycologist\nPhone no:123456789\nLocation:Mangaluru",
-                        style: TextStyle(
-                          fontSize: 30,
-                        ),
+                        style: TextStyle(fontSize: 10),
                       ),
                     ),
                   ),
                   Container(
+                    width: MediaQuery.of(context).size.width,
                     height: 200,
                     color: Colors.blue,
                     padding: const EdgeInsets.only(
-                      right: 295,
                       top: 10,
                       left: 10,
                     ),
                     child: Text(
                       "Name:Dr.Ramya\nSpecialization:General Physician\nPhone no:123456789\nLocation:Mangaluru",
                       style: TextStyle(
-                        fontSize: 30,
+                        fontSize: 10,
                       ),
                     ),
                   ),

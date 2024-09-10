@@ -21,6 +21,7 @@ class _PhysicalQuizPageState extends State<PhysicalQuizPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawerEdgeDragWidth: MediaQuery.of(context).size.width,
       appBar: AppBar(),
       backgroundColor: const Color.fromARGB(255, 5, 50, 80),
       body: Container(
@@ -157,11 +158,11 @@ class _PhysicalQuizPageState extends State<PhysicalQuizPage> {
       ),
       content: Row(
         children: [
-          SizedBox(
-            width: 40,
-          ),
           ElevatedButton(
-            child: const Text("Restart"),
+            child: const Text(
+              "Restart",
+              style: TextStyle(fontSize: 10),
+            ),
             onPressed: () {
               Navigator.pop(context);
               setState(() {
@@ -170,9 +171,6 @@ class _PhysicalQuizPageState extends State<PhysicalQuizPage> {
                 selectedAnswer = null;
               });
             },
-          ),
-          SizedBox(
-            width: 50,
           ),
           ElevatedButton(
             onPressed: () {
@@ -195,6 +193,7 @@ class _PhysicalQuizPageState extends State<PhysicalQuizPage> {
             },
             child: const Text(
               "See Recomendations",
+              style: TextStyle(fontSize: 10),
             ),
           ),
         ],

@@ -69,6 +69,7 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawerEdgeDragWidth: MediaQuery.of(context).size.width,
       backgroundColor: const Color.fromARGB(255, 5, 50, 80),
       body: SafeArea(
         child: Center(
@@ -123,6 +124,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     child: Column(
                       children: [
                         Container(
+                          width: MediaQuery.of(context).size.width,
                           padding: EdgeInsets.symmetric(
                               vertical: 2.0, horizontal: 30.0),
                           decoration: BoxDecoration(
@@ -147,6 +149,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           height: 30.0,
                         ),
                         Container(
+                          width: MediaQuery.of(context).size.width,
                           padding: EdgeInsets.symmetric(
                               vertical: 2.0, horizontal: 30.0),
                           decoration: BoxDecoration(
@@ -171,6 +174,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           height: 30.0,
                         ),
                         Container(
+                          width: MediaQuery.of(context).size.width,
                           padding: EdgeInsets.symmetric(
                               vertical: 2.0, horizontal: 30.0),
                           decoration: BoxDecoration(

@@ -24,6 +24,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawerEdgeDragWidth: MediaQuery.of(context).size.width,
       backgroundColor: Color.fromARGB(255, 5, 50, 80),
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 255, 255, 255),
@@ -46,6 +47,7 @@ class _HomePageState extends State<HomePage> {
       ),
       drawer: Drawer(
         child: Container(
+          width: MediaQuery.of(context).size.width,
           color: Color.fromARGB(255, 0, 50, 80),
           child: ListView(
             children: [
@@ -63,7 +65,7 @@ class _HomePageState extends State<HomePage> {
                   child: Text(
                     "To Do List",
                     style: TextStyle(
-                      fontSize: 18.0,
+                      fontSize: 12.0,
                       color: Colors.white,
                     ),
                   ),
@@ -86,7 +88,7 @@ class _HomePageState extends State<HomePage> {
                   child: Text(
                     "Therapist Contacts",
                     style: TextStyle(
-                      fontSize: 18.0,
+                      fontSize: 12.0,
                       color: Colors.white,
                     ),
                   ),
@@ -109,7 +111,7 @@ class _HomePageState extends State<HomePage> {
                   child: Text(
                     "Chat Bot(Coming Soon)",
                     style: TextStyle(
-                      fontSize: 18.0,
+                      fontSize: 12.0,
                       color: Colors.white,
                     ),
                   ),
@@ -125,6 +127,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       body: Container(
+        width: MediaQuery.of(context).size.width,
         alignment: Alignment.center,
         margin: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
         padding: EdgeInsets.all(10),
@@ -146,9 +149,9 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text(
-                  "Mental Health Assesment",
+                  "Health Assesment",
                   style: TextStyle(
-                    fontSize: 40,
+                    fontSize: 25,
                     color: Colors.white,
                   ),
                 ),
@@ -161,9 +164,9 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Let's quickly take personal health questionnaire before we get started!",
+                  "Let's quickly take personal health questionnaire!",
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 12,
                     color: Colors.white,
                   ),
                 ),
@@ -190,7 +193,7 @@ class _HomePageState extends State<HomePage> {
                 "Physical Activity Assesment",
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 22.0,
+                  fontSize: 15.0,
                   fontWeight: FontWeight.w500,
                 ),
               ),
@@ -216,7 +219,7 @@ class _HomePageState extends State<HomePage> {
                 "Mental Health Assesment",
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 22.0,
+                  fontSize: 15.0,
                   fontWeight: FontWeight.w500,
                 ),
               ),

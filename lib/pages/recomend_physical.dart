@@ -18,36 +18,40 @@ class RecomendPhysical extends StatelessWidget {
                   child: Column(
                     children: [
                       Container(
+                        width: MediaQuery.of(context).size.width,
                         height: 200,
                         color: Color.fromARGB(255, 5, 50, 80),
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 145, vertical: 80),
-                        child: Text(
-                          "You are doing good,can do better.",
-                          style: TextStyle(
-                              fontSize: 30,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.white),
-                        ),
-                      ),
-                      Container(
-                        height: 200,
-                        color: Colors.orange,
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 120, vertical: 80),
-                        child: Text(
-                          "Drink more water have a good sleep!!.",
-                          style: TextStyle(
-                            fontSize: 30,
-                            fontWeight: FontWeight.w400,
+                        padding: EdgeInsets.symmetric(vertical: 80),
+                        child: Center(
+                          child: Text(
+                            "You are doing good,can do better.",
+                            style: TextStyle(
+                                fontSize: 10,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.white),
                           ),
                         ),
                       ),
                       Container(
+                        width: MediaQuery.of(context).size.width,
+                        height: 200,
+                        color: Colors.orange,
+                        padding: EdgeInsets.symmetric(vertical: 80),
+                        child: Center(
+                          child: Text(
+                            "Drink more water have a good sleep!!.",
+                            style: TextStyle(
+                              fontSize: 10,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        width: MediaQuery.of(context).size.width,
                         height: 200,
                         color: Colors.purple,
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 107, vertical: 80),
+                        padding: EdgeInsets.symmetric(vertical: 80),
                         child: Link(
                           target: LinkTarget.blank,
                           uri: Uri.parse(
@@ -55,20 +59,22 @@ class RecomendPhysical extends StatelessWidget {
                           builder: (context, followLink) {
                             return TextButton(
                               onPressed: followLink,
-                              child: Text(
-                                "Click here to watch the video[Youtube]",
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: 30),
+                              child: Center(
+                                child: Text(
+                                  "Click here to watch the video[Youtube]",
+                                  style: TextStyle(
+                                      color: Colors.black, fontSize: 10),
+                                ),
                               ),
                             );
                           },
                         ),
                       ),
                       Container(
+                        width: MediaQuery.of(context).size.width,
                         height: 200,
                         color: Colors.white,
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 107, vertical: 80),
+                        padding: EdgeInsets.symmetric(vertical: 80),
                         child: Link(
                           target: LinkTarget.blank,
                           uri: Uri.parse(
@@ -76,10 +82,12 @@ class RecomendPhysical extends StatelessWidget {
                           builder: (context, followLink) {
                             return TextButton(
                               onPressed: followLink,
-                              child: Text(
-                                "Click here to watch the video[Youtube]",
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: 30),
+                              child: Center(
+                                child: Text(
+                                  "Click here to watch the video[Youtube]",
+                                  style: TextStyle(
+                                      color: Colors.black, fontSize: 10),
+                                ),
                               ),
                             );
                           },

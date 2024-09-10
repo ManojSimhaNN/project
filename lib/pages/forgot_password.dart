@@ -37,13 +37,16 @@ class _ForgotPasswordState extends State<ForgotPassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawerEdgeDragWidth: MediaQuery.of(context).size.width,
       body: Container(
+        width: MediaQuery.of(context).size.width,
         child: Column(
           children: [
             SizedBox(
               height: 50.0,
             ),
             Container(
+              width: MediaQuery.of(context).size.width,
               alignment: Alignment.topCenter,
               child: Text(
                 "Password Recovery",

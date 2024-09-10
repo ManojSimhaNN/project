@@ -1,4 +1,3 @@
-
 import 'package:companion_app/pages/therapist.dart';
 import 'package:flutter/material.dart';
 
@@ -25,6 +24,7 @@ class _ContactsState extends State<Contacts> {
         backgroundColor: Colors.white,
       ),
       body: Container(
+        width: MediaQuery.of(context).size.width,
         alignment: Alignment.center,
         margin: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
         padding: EdgeInsets.all(10),
@@ -48,7 +48,7 @@ class _ContactsState extends State<Contacts> {
                 Text(
                   "Therapist Contacts",
                   style: TextStyle(
-                    fontSize: 40,
+                    fontSize: 20,
                     color: Colors.white,
                   ),
                 ),
@@ -61,9 +61,9 @@ class _ContactsState extends State<Contacts> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Let's quickly see the available options in your location!",
+                  "Let's see the available options!",
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 12,
                     color: Colors.white,
                   ),
                 ),
@@ -110,6 +110,7 @@ class _ContactsState extends State<Contacts> {
               height: 30,
             ),
             Container(
+              width: MediaQuery.of(context).size.width,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color.fromARGB(0, 0, 0, 0),
@@ -128,7 +129,7 @@ class _ContactsState extends State<Contacts> {
                   "See the Contacts",
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 22.0,
+                    fontSize: 15.0,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
